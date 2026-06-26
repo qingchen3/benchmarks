@@ -1,1 +1,4 @@
--NAME q105 -QUERY MATCH (a:Person)-[:knows]->(b:Person), (b)-[:knows]->(c:Person), (c)-[:knows]->(a), (c)-[:knows]->(d:Person), (d)-[:knows]->(e:Person) RETURN count(*) ---- 1 0
+-NAME q105
+-QUERY MATCH (a:Person)-[:knows]->(b:Person), (b)-[:knows]->(c:Person), (c)-[:knows]->(a), (c)-[:knows]->(d:Person), (d)-[:knows]->(e:Person) RETURN count(*);
+---- 1
+0
