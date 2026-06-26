@@ -241,6 +241,8 @@ def serialize_dataset(dataset_name):
 def run_lbug(serialized_graph_path):
     is_error = False
     for group, _ in benchmark_group.group_to_benchmarks.items():
+        if args.group is not None and group != args.group:
+            continue
         is_current_group_error = False
         benchmark_cmd = [
             lbug_benchmark_tool,
@@ -277,6 +279,7 @@ def parse_args():
                         help='number of threads to run benchmark')
     parser.add_argument(
         '--note', default='automated benchmark run', help='note about this run')
+    parser.add_argument('--group', default=None, help='benchmark group to run')
     return parser.parse_args()
 
 
