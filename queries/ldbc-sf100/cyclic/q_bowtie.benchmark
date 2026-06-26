@@ -1,0 +1,11 @@
+-NAME q_bowtie
+-QUERY
+MATCH (a:Person)-[:knows]->(b:Person),
+      (b)-[:knows]->(c:Person),
+      (c)-[:knows]->(a),
+      (a)-[:knows]->(d:Person),
+      (d)-[:knows]->(e:Person),
+      (e)-[:knows]->(a)
+WHERE b.ID < c.ID AND d.ID < e.ID
+RETURN count(*);
+----

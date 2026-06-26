@@ -1,0 +1,9 @@
+-NAME q_diamond
+-QUERY
+MATCH (a:Person)-[:knows]->(b:Person),
+      (a)-[:knows]->(c:Person),
+      (b)-[:knows]->(d:Person),
+      (c)-[:knows]->(d:Person)
+WHERE b.ID < c.ID
+RETURN count(*);
+----

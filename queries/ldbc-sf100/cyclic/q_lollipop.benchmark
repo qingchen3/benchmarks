@@ -1,0 +1,9 @@
+-NAME q_lollipop
+-QUERY
+MATCH (a:Person)-[:knows]->(b:Person),
+      (b)-[:knows]->(c:Person),
+      (c)-[:knows]->(a),
+      (c)-[:knows]->(d:Person),
+      (d)-[:knows]->(e:Person)
+RETURN count(*);
+----
