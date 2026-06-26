@@ -1,0 +1,8 @@
+-NAME q_triangle
+-QUERY
+MATCH (a:Person)-[:knows]->(b:Person),
+      (b)-[:knows]->(c:Person),
+      (c)-[:knows]->(a)
+WHERE a.ID < b.ID AND b.ID < c.ID
+RETURN count(*);
+----
