@@ -1,0 +1,1 @@
+-NAME q102 -QUERY MATCH (a:Person)-[:knows]->(b:Person), (b)-[:knows]->(c:Person), (c)-[:knows]->(d:Person), (d)-[:knows]->(a) WHERE a.ID < b.ID AND b.ID < c.ID AND c.ID < d.ID RETURN count(*) ---- 1 0
